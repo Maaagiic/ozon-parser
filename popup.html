@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { width: 320px; font-family: Arial, sans-serif; padding: 10px; background: #fff;}
+    button { width: 100%; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; margin-top: 10px; transition: 0.2s;}
+    #startBtn { background: #005BFF; color: white; }
+    #startBtn:hover { background: #0045cc; }
+    #stopBtn { background: #ff4d4d; color: white; display: none; }
+    button:disabled { background: #cccccc !important; cursor: not-allowed; }
+    input { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 10px; font-size: 13px;}
+    #status { margin-top: 10px; font-size: 13px; color: #555; text-align: center; font-weight: bold; }
+    progress { width: 100%; height: 12px; margin-top: 10px; display: none; }
+    
+    .monitor-section { background: #f4f7f9; padding: 12px; border-radius: 8px; border: 1px solid #e1e4e8; margin-top: 15px;}
+    .monitor-title { margin: 0 0 10px 0; font-size: 14px; color: #333; display: flex; align-items: center; justify-content: space-between;}
+    .status-dot { height: 10px; width: 10px; background-color: #ccc; border-radius: 50%; display: inline-block; }
+    .status-dot.active { background-color: #28a745; box-shadow: 0 0 5px #28a745;}
+    .flex-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px;}
+    .flex-row label { font-size: 12px; font-weight: bold; color: #555; }
+    #toggleMonitorBtn { margin-top: 5px; }
+    .btn-off { background: #6c757d; color: white; }
+    .btn-on { background: #28a745; color: white; }
+  </style>
+</head>
+<body>
+  <h3 style="margin-top: 0; color: #005BFF;">Ozon ROI Hunter 💰</h3>
+  
+  <div id="settings">
+    <label style="font-size: 13px; font-weight: bold;">Сколько страниц парсить?</label>
+    <input type="number" id="pagesInput" value="5">
+
+    <label style="font-size: 13px; font-weight: bold;">Мин. баллов (для ручного):</label>
+    <input type="number" id="minPointsInput" value="200">
+  </div>
+  
+  <button id="startBtn">Начать ручной парсинг</button>
+  <button id="stopBtn">Остановить</button>
+  
+  <div id="status">Ожидание...</div>
+  <progress id="pBar" value="0" max="100"></progress>
+
+  <div class="monitor-section">
+    <h4 class="monitor-title">Фоновый монитор <span id="monitorStatusDot" class="status-dot"></span></h4>
+    
+    <label style="font-size: 12px; font-weight: bold; color: #555;">Ссылка на акцию:</label>
+    <input type="text" id="monitorUrl" value="https://www.ozon.ru/highlight/bally-za-otzyv-1171518/">
+    
+    <div class="flex-row">
+      <label>Уведомлять при баллах ></label>
+      <input type="number" id="monitorMinPoints" value="1000" style="width: 70px; margin: 0;">
+    </div>
+    
+    <div class="flex-row">
+      <label>Базовый интервал (минут)</label>
+      <input type="number" id="monitorInterval" value="30" style="width: 70px; margin: 0;">
+    </div>
+    <button id="viewMonitorResults" style="background: #e91e63; color: white;">Результаты монитора</button>
+    <button id="toggleMonitorBtn" class="btn-off">Включить авто-поиск</button>
+    
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
