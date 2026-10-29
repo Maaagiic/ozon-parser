@@ -1,4 +1,4 @@
-# Ozon ROI Hunter
+# Ozon Parser — парсер Озона для Chrome
 
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](#установка)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-0b57d0?style=for-the-badge)](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3)
@@ -11,7 +11,7 @@
 > [!WARNING]
 > Проект не поддерживается. Код выложен как есть: если Ozon поменяет формат данных, поиск может перестать работать.
 
-Расширение для Chrome, которое ищет на Ozon товары с самой выгодной акцией «Баллы за отзыв»: сколько баллов вернётся относительно цены товара.
+**Ozon Parser** (в браузере называется Ozon ROI Hunter) — парсер Ozon в виде расширения для Chrome. Он собирает товары со страниц Озона: каталога, поиска и акций. Главная задача — найти товары с самой выгодной акцией «Баллы за отзыв»: сколько баллов вернётся относительно цены товара.
 
 Сделано на заказ, по требованиям заказчика.
 
