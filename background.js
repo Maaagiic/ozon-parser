@@ -52,7 +52,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             chrome.action.setBadgeText({ text: foundInBackgroundCount.toString() });
             chrome.action.setBadgeBackgroundColor({ color: "#e91e63" });
             
-            // СОХРАНЯЕМ В ПАМЯТЬ ДЛЯ ТАБЛИЦЫ РЕЗУЛЬТАТОВ
+            // Копим найденное для таблицы результатов монитора
             chrome.storage.local.get(['ozonMonitorResults'], function(result) {
                 let existing = result.ozonMonitorResults || [];
                 let updated = [...existing, ...newFoundItems];
@@ -61,7 +61,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             });
         }
     }
-}); // <--- ВОТ ЭТА СКОБКА И ТОЧКА С ЗАПЯТОЙ БЫЛИ ПРОПУЩЕНЫ
+});
 
 function manageAlarms() {
     chrome.alarms.clearAll();

@@ -2,7 +2,7 @@ let currentData = [];
 let currentSort = { column: 'roi', asc: false };
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- ИЗМЕНЕННАЯ ЛОГИКА ЗАГРУЗКИ ---
+    // Ручной поиск и монитор хранят результаты под разными ключами
     const urlParams = new URLSearchParams(window.location.search);
     const mode = urlParams.get('mode') || 'manual';
     const storageKey = mode === 'monitor' ? 'ozonMonitorResults' : 'ozonResults';
@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
             renderCards();
         }
     });
-    // -----------------------------------
 
     setupSort('sortRoi', 'roi', false);
     setupSort('sortPoints', 'points', false);

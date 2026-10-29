@@ -1,5 +1,16 @@
 # Ozon ROI Hunter
 
+[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](#установка)
+[![Manifest V3](https://img.shields.io/badge/Manifest-V3-0b57d0?style=for-the-badge)](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3)
+[![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](#как-работает)
+[![Ozon](https://img.shields.io/badge/Ozon-005BFF?style=for-the-badge)](https://www.ozon.ru/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](LICENSE)
+[![Status](https://img.shields.io/badge/Статус-не_поддерживается-lightgrey?style=for-the-badge)](#статус)
+[![kotcode.com](https://img.shields.io/badge/Автор-kotcode.com-ff2e3d?style=for-the-badge)](https://kotcode.com)
+
+> [!WARNING]
+> Проект не поддерживается. Код выложен как есть: если Ozon поменяет формат данных, поиск может перестать работать.
+
 Расширение для Chrome, которое ищет на Ozon товары с самой выгодной акцией «Баллы за отзыв»: сколько баллов вернётся относительно цены товара.
 
 Сделано на заказ, по требованиям заказчика.
@@ -46,3 +57,11 @@
 
 - Разбор опирается на текущий формат ответа Ozon. Если сайт поменяет структуру данных или подписи («баллов за отзыв»), поиск придётся подправить.
 - Настройки монитора хранятся в памяти service worker. После перезапуска браузера монитор нужно включить заново.
+
+## Статус
+
+Проект сделан на заказ и больше не развивается: обновлений и исправлений не будет. Issues и pull requests не рассматриваются.
+
+## Лицензия
+
+[MIT](LICENSE). Автор — [kotcode.com](https://kotcode.com).

@@ -133,8 +133,8 @@ async function startParsing(maxPages, minPointsLimit) {
     });
 }
 
-// --- ФОНОВАЯ ПРОВЕРКА (БЕЗ 403) ---
-// --- ФОНОВАЯ ПРОВЕРКА (БЕЗ 403) ---
+// --- ФОНОВАЯ ПРОВЕРКА ---
+// Запрос идёт из открытой вкладки Ozon с её сессией, поэтому сайт не отвечает 403
 async function runBackgroundCheck(settings) {
     try {
         const urlObj = new URL(settings.targetUrl);
@@ -147,7 +147,7 @@ async function runBackgroundCheck(settings) {
         if (response.ok) {
             const data = await response.json();
             const items = extractItems(data);
-            let foundItems = []; // Теперь тут будут полные объекты, а не просто ID
+            let foundItems = [];
 
             items.forEach(item => {
                 const itemStr = JSON.stringify(item).toLowerCase();
